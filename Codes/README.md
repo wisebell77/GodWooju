@@ -120,6 +120,53 @@ python -m unittest discover -s tests
 The included tests verify that BFS matches the game optimal move count for the
 provided sample stages and that IDS finds the same optimal depth.
 
+Benchmark
+---------
+
+Run the full benchmark from the `Codes` folder:
+
+```powershell
+python -m gridcraze.benchmark --images ..\Images --out results\benchmark --trials 5
+```
+
+The benchmark reads all screenshots under `Images`, encodes each image, and
+measures BFS/DFS/IDS performance. DFS is included as a non-optimal baseline, so
+check the matched-optimal count before interpreting it as a solver. The
+benchmark also includes optimal-bound variants:
+
+- `BFS(bound)`: BFS with a depth cutoff equal to the known optimal move count
+- `IDS(bound)`: IDS capped at the known optimal move count
+- `DLS(bound)`: depth-limited DFS capped at the known optimal move count
+
+Generated outputs:
+
+- `results/benchmark/raw_results.csv`
+- `results/benchmark/stage_summary.csv`
+- `results/benchmark/overall_summary.csv`
+- `results/benchmark/optimal_length_counts.csv`
+- `results/benchmark/optimal_length_summary.csv`
+- `results/benchmark/range_summary_5.csv`
+- `results/benchmark/range_summary_10.csv`
+- `results/benchmark/summary.json`
+- `results/benchmark/report.md`
+- `results/benchmark/plots/*.png`, including exact optimal-length line and
+  grouped-bar charts
+- `results/benchmark/exact_optimal_length/`
+- `results/benchmark/range_5/`
+- `results/benchmark/range_10/`
+
+The separated analysis folders contain:
+
+- `counts.csv`
+- `summary.csv`
+- `marginal_rate_summary.csv`
+- `plots/value_*.png`
+- `plots/mr_*.png`
+
+The marginal-rate charts use adjacent observed x-axis categories only. If the
+next observed category is `j` moves away, the marginal rate is calculated as
+`(next_value - current_value) / j`.
+
 Notes
 -----
 

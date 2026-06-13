@@ -1,0 +1,5 @@
+{
+  "out": "results\\benchmark",
+  "total_stages": 320,
+  "trials": 5
+}

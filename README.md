@@ -83,6 +83,16 @@ Run tests:
 python -m unittest discover -s tests
 ```
 
+Run the benchmark and generate result files/graphs:
+
+```powershell
+python -m gridcraze.benchmark --images ..\Images --out results\benchmark --trials 5
+```
+
+The benchmark outputs overall summaries, 5/10-move bin summaries, exact
+optimal-length summaries, marginal-rate summaries, and graph images under
+`Codes/results/benchmark`.
+
 More Details
 ------------
 
