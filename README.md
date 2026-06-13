@@ -90,8 +90,8 @@ python -m gridcraze.benchmark --images ..\Images --out results\benchmark --trial
 ```
 
 The benchmark outputs overall summaries, 5/10-move bin summaries, exact
-optimal-length summaries, marginal-rate summaries, and graph images under
-`Codes/results/benchmark`.
+optimal-length summaries, marginal-rate summaries, graph images, and a short
+interpretation report under `Codes/results/benchmark`.
 
 More Details
 ------------

@@ -149,6 +149,7 @@ Generated outputs:
 - `results/benchmark/range_summary_10.csv`
 - `results/benchmark/summary.json`
 - `results/benchmark/report.md`
+- `results/benchmark/interpretation_report.md`
 - `results/benchmark/plots/*.png`, including exact optimal-length line and
   grouped-bar charts
 - `results/benchmark/exact_optimal_length/`
